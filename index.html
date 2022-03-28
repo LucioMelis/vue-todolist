@@ -15,6 +15,9 @@
         integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--Inserire link Googlefont  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <!-- link VueJS  -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <title>Vue To Do List</title>
@@ -26,32 +29,34 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-12">
-                    <h1>TO DO LIST</h1>
+                    <h1 class="py-3">TO DO LIST</h1>
                 </div>
             </div>
         </div>
     </header>
 
     <main>
-        <div id="root" class="container">
+        <div id="root" class="container py-3">
             <!-- Sezione Lista -->
             <div class="row">
-                <div class="col">
-                    <ul>
-                        <li v-for="(elementi,indiceElementi) in list">
-                            <i @click="rimuoviLista(indiceElementi)" class="fa-solid fa-circle-xmark"></i>
-                            <span :class="aggiungiClasse(elementi.done)">{{elementi.text}}</span>
+                <div class="col lm-background">
+                    <ul class="py-4">
+                        <li v-for="(elementi,indiceElementi) in list" class="d-flex align-items-center m-2 lm-li">
+                            <i @click="rimuoviLista(indiceElementi)" class="fa-solid fa-circle-xmark fa-2x"></i>
+                            <span :class="aggiungiClasse(elementi.done)" @click="cambioBooleana(indiceElementi)">
+                                {{elementi.text}}
+                            </span>
                         </li>
                     </ul>
                 </div>
             </div>
             <!-- Sezione Button  -->
             <div class="row justify-content-center">
-                <div class="col-6">
-                    <div class="input-group mb-3">
-                        <button @click="aggiungoOggetto()" class="btn btn-outline-secondary" type="button"
+                <div class="col-6 py-2">
+                    <div class="input-group border border-dark rounded">
+                        <button @click="aggiungoOggetto()" class="btn lm-btn" type="button"
                             id="button-addon1">Inserisci</button>
-                        <input v-model="valoreInput" type="text" class="form-control"
+                        <input v-model="valoreInput" @keyUp.enter="aggiungoOggetto()" type="text" class="form-control"
                             placeholder="Scrivi qualcosa da aggiungere.." aria-label="Example text with button addon"
                             aria-describedby="button-addon1">
                     </div>

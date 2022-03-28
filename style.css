@@ -1,7 +1,42 @@
-ul{
-    list-style-type: none;
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: lightgrey;
+}
+.lm-background{
+    background-color: white;
+    border-radius: 10px;
 }
 
-i{
-    padding-right: 5px;
+ul{
+    list-style-type: none;
+    color: white;
+    padding-left: 0 !important;
+    margin-bottom: 0rem !important;
+}
+
+.lm-li{
+    border: 1px solid white;
+    background-color: #00395d; 
+    border-radius: 10px; 
+}
+
+span, i{   
+    cursor: pointer;     
+}
+
+header{
+    background-color: #00395d;
+}
+
+h1{
+    color:white;
+}
+
+ul li *{
+    padding:5px;
+}
+
+.lm-btn{
+    background-color: #00395d !important;
+    color: white;
 }
