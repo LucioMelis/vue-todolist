@@ -33,9 +33,9 @@
     </header>
 
     <main>
-        <div class="container">
+        <div id="root" class="container">
             <!-- Sezione Lista -->
-            <div id="root" class="row">
+            <div class="row">
                 <div class="col">
                     <ul>
                         <li v-for="(elementi,indiceElementi) in list">
@@ -48,12 +48,12 @@
             <!-- Sezione Button  -->
             <div class="row justify-content-center">
                 <div class="col-6">
-                    <button @click="prova()">Inserisci</button>
-                    <div class="mb-3">
-                        <button class="btn btn-outline-secondary">Inserisci</button>
-                        <input v-model="nuovoOggetto" type="text" class="form-control"
-                            placeholder="Scrivi qualcosa da aggiungere..">
-
+                    <div class="input-group mb-3">
+                        <button @click="aggiungoOggetto()" class="btn btn-outline-secondary" type="button"
+                            id="button-addon1">Inserisci</button>
+                        <input v-model="valoreInput" type="text" class="form-control"
+                            placeholder="Scrivi qualcosa da aggiungere.." aria-label="Example text with button addon"
+                            aria-describedby="button-addon1">
                     </div>
                 </div>
             </div>

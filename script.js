@@ -56,7 +56,7 @@ const app = new Vue({
     //*********************** DATA ******************/ 
     data: {
         list,
-        nuovoOggetto: '',
+        valoreInput: '',
     },
     //*********************** METHODS ******************/ 
     methods: {
@@ -73,8 +73,17 @@ const app = new Vue({
             // console.log(this.list[0].text);
         },
 
-        prova() {
-            console.log('ok');
+        aggiungoOggetto() {
+
+            if (this.valoreInput.length > 0) {
+                const nuovoOggetto = {
+                    text: this.valoreInput,
+                    done: false,
+                }
+                this.valoreInput = '';
+                this.list.push(nuovoOggetto);
+                console.log(nuovoOggetto);
+            }
         }
     }
 });
