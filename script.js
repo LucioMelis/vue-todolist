@@ -56,6 +56,7 @@ const app = new Vue({
     //*********************** DATA ******************/ 
     data: {
         list,
+        nuovoOggetto: '',
     },
     //*********************** METHODS ******************/ 
     methods: {
@@ -70,6 +71,10 @@ const app = new Vue({
             // console.log(indiceElementi)
             // console.log(this.list)
             // console.log(this.list[0].text);
+        },
+
+        prova() {
+            console.log('ok');
         }
     }
 });
