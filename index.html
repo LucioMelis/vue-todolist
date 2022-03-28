@@ -38,8 +38,9 @@
             <div id="root" class="row">
                 <div class="col">
                     <ul>
-                        <li v-for="elemento in list">
-                            {{elemento.text}}
+                        <li v-for="(elementi,indiceElementi) in list">
+                            <i @click="rimuoviLista(indiceElementi)" class="fa-solid fa-circle-xmark"></i>
+                            <span :class="aggiungiClasse(elementi.done)">{{elementi.text}}</span>
                         </li>
                     </ul>
                 </div>

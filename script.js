@@ -38,7 +38,7 @@ const list = [
 //MILESTONE 1
 //Stampare all'interno di una lista, un item per ogni todo.
 //Se la proprietà done è uguale a true,
-//visualizzare il testo del todo sbarrato.
+//visualizzare il testo del todo sbarrato. FATTO!!
 
 // MILESTONE 2
 // Visualizzare a fianco ad ogni item ha una "x":
@@ -59,6 +59,17 @@ const app = new Vue({
     },
     //*********************** METHODS ******************/ 
     methods: {
+        aggiungiClasse(elementiDone) {
+            if (elementiDone === true) {
+                return 'text-decoration-line-through'
+            }
+        },
 
+        rimuoviLista(indiceElementi) {
+            this.list.splice(indiceElementi, 1);
+            // console.log(indiceElementi)
+            // console.log(this.list)
+            // console.log(this.list[0].text);
+        }
     }
 });
